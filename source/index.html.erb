@@ -9,20 +9,21 @@ title: Le Wagon - Ok
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <% data.cities.each do |city| %>
-      <div class="col-md-4">
-        <div class="card" style="background-image: url(<%= city.picture %>);">
-          <div class="card-category"><%=city.category%></div>
-          <div class="card-description">
-            <h2><%= city.name %></h2>
-            <p><%= city.address %></p>
+<div class="container" id="home-flats">
+  <h2 class="text-center">Recent flats</h2>
+    <div class="row">
+      <% data.flats.each do |owner, flat| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+            <div class="card-category"><%=flat.city_name%></div>
+            <div class="card-description">
+              <h2><%= flat.name %></h2>
+              <p><%= flat.description %></p>
+            </div>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class:"card-user" %>
+            <%= link_to "", "flats/#{owner}.html", class: "card-link" %>
           </div>
-          <%= image_tag city.picture, class: "card-user" %>
-          <% link_to "Coucou", "#", class: "card-link" %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>

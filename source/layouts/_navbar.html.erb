@@ -1,8 +1,13 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <%= image_tag "logo.png", id: "logo" %>
-  </a>
+
+
+    <% link_to "index.html", :class => 'navbar-wagon-brand' do %>
+      <%= image_tag 'logo.png', :id => "logo" %>
+    <% end %>
+
+
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -10,6 +15,7 @@
     <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+    <%= link_to "Meet the team", "team.html", class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
